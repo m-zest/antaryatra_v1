@@ -103,8 +103,8 @@ section{padding:120px 0;scroll-margin-top:var(--nav-h);}
 .hero-visual{position:relative;overflow:hidden;}
 .hero-visual img{position:absolute;inset:0;width:100%;height:114%;object-fit:cover;filter:saturate(0.85) sepia(0.12);will-change:transform;}
 .hero-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--bg-dawn),rgba(219,216,203,0) 22%);pointer-events:none;}
-.hero-caption{position:absolute;left:22px;bottom:22px;z-index:2;background:rgba(20,15,11,0.55);color:var(--bone-soft);padding:8px 14px;border-radius:8px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
-.scroll-cue{position:absolute;bottom:34px;left:max(28px,calc((100vw - 1100px)/2 + 28px));display:flex;align-items:center;gap:12px;color:var(--ink-faint);}
+.hero-caption{user-select:none;-webkit-user-select:none;position:absolute;left:22px;bottom:22px;z-index:2;background:rgba(20,15,11,0.55);color:var(--bone-soft);padding:8px 14px;border-radius:8px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+.scroll-cue{user-select:none;-webkit-user-select:none;position:absolute;bottom:34px;left:max(28px,calc((100vw - 1100px)/2 + 28px));display:flex;align-items:center;gap:12px;color:var(--ink-faint);}
 .scroll-cue .line{width:44px;height:1px;background:var(--ink-faint);position:relative;overflow:hidden;}
 .scroll-cue .line::after{content:'';position:absolute;inset:0;background:var(--ember);transform:translateX(-100%);animation:cue 2.4s ease-in-out infinite;}
 @keyframes cue{0%{transform:translateX(-100%);}55%{transform:translateX(0);}100%{transform:translateX(100%);}}
@@ -159,10 +159,10 @@ section{padding:120px 0;scroll-margin-top:var(--nav-h);}
 .route-visual figure.is-active{opacity:1;}
 .ph{position:relative;background:linear-gradient(150deg,var(--ph1,#6f8998),var(--ph2,#332e26));}
 .ph img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.88) sepia(0.08);}
-.ph .ph-label{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--bone-soft);letter-spacing:0.4em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-size:0.8rem;}
+.ph .ph-label{user-select:none;-webkit-user-select:none;display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--bone-soft);letter-spacing:0.4em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-size:0.8rem;}
 .ph.is-broken img{display:none;}
 .ph.is-broken .ph-label{display:flex;}
-.ph figcaption{position:absolute;left:16px;bottom:16px;background:rgba(20,15,11,0.55);color:var(--bone-soft);padding:7px 12px;border-radius:8px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:2;}
+.ph figcaption{user-select:none;-webkit-user-select:none;position:absolute;left:16px;bottom:16px;background:rgba(20,15,11,0.55);color:var(--bone-soft);padding:7px 12px;border-radius:8px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:2;}
 @media(max-width:900px){
   .journey-grid{grid-template-columns:1fr;gap:0;}
   .route-visual{display:none;}
@@ -330,8 +330,8 @@ footer .brand{color:var(--bone-soft);font-size:1.1rem;}
   <div class="container">
     <a class="brand" href="#top">Antaryatra <span class="dev" aria-hidden="true">अन्तर्यात्रा</span></a>
     <div class="nav-links">
-      <a href="#journey">Route</a>
       <a href="#bodies">The Method</a>
+      <a href="#journey">Route</a>
       <a href="#nights">The Nights</a>
       <a href="#practical">Details</a>
       <a href="#faq">FAQ</a>
@@ -367,6 +367,124 @@ footer .brand{color:var(--bone-soft);font-size:1.1rem;}
     <div class="stat" data-reveal style="--d:.08s"><span class="num" data-count="4">4</span><span class="lbl mono">Cities</span></div>
     <div class="stat" data-reveal style="--d:.16s"><span class="num" data-count="3">3</span><span class="lbl mono">Inner bodies</span></div>
     <div class="stat" data-reveal style="--d:.24s"><span class="num" data-count="12">12</span><span class="lbl mono">Travelers, at most</span></div>
+  </div>
+</section>
+
+<section class="interface" id="interface" data-nav="dark" aria-label="The synthesis">
+  <div class="ph" style="--ph1:#3a2a20;--ph2:#0d0906;">
+    <img loading="lazy" data-parallax="0.12" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ganga%20aarti%20at%20Dasaswamedh%20Ghat,%20Varanasi%2001.jpg?width=2000" alt="Lamps and fire at the Ganga aarti, Varanasi, at night" onerror="this.closest('.ph').classList.add('is-broken')">
+    <span class="ph-label" aria-hidden="true">Varanasi · aarti</span>
+  </div>
+  <div class="container interface-inner">
+    <span class="mono eyebrow" data-reveal>Where it leads</span>
+    <div data-reveal style="--d:.06s">
+      <svg class="lemniscate-big" viewBox="0 0 100 50" role="presentation" aria-hidden="true"><path pathLength="1" d="M50 25 C50 6 16 6 16 25 C16 44 50 44 50 25 C50 6 84 6 84 25 C84 44 50 44 50 25 Z"/></svg>
+    </div>
+    <h2 data-reveal style="--d:.1s">Witnessing the interface.</h2>
+    <p data-reveal style="--d:.16s">Nine nights, three bodies, one city walked inside and out. What you leave with isn't an answer — it's the quiet ability to watch mind, soul and body move together, and to know, in any moment, which one is doing the talking.</p>
+    <div class="triad mono" data-reveal style="--d:.22s"><b>Mind</b><span>·</span><b>Soul</b><span>·</span><b>Body</b></div>
+  </div>
+</section>
+
+<section class="bodies" id="bodies" data-nav="dark">
+  <div class="container">
+    <span class="mono eyebrow" data-reveal>The method</span>
+    <h2 class="section-title" data-reveal>Three bodies. The city outside, the self inside — walked together.</h2>
+    <p class="lede" data-reveal>Every exploration on this journey has two faces. You walk the city, and you walk yourself — the same territory, seen from opposite sides. They meet at a single point the old texts called the <em>interface</em>. In Varanasi, this deepens across three days: you gather three times daily — noon, afternoon and evening — and each gathering climbs one layer higher, from the body you can touch to the self underneath everything.</p>
+
+    <div class="checkpoints" data-reveal aria-label="Daily assembly checkpoints in Varanasi">
+      <div class="checkpoint" style="--ck:var(--ember);">
+        <div class="ck-time">12 <span>Noon</span></div>
+        <span class="ck-body">Physical body</span>
+        <span class="ck-note">The ground floor</span>
+      </div>
+      <div class="checkpoint" style="--ck:var(--river);">
+        <div class="ck-time">3 <span>Afternoon</span></div>
+        <span class="ck-body">Astral body</span>
+        <span class="ck-note">The currents</span>
+      </div>
+      <div class="checkpoint" style="--ck:var(--brass);">
+        <div class="ck-time">6 <span>Evening</span></div>
+        <span class="ck-body">Causal body</span>
+        <span class="ck-note">The source</span>
+      </div>
+    </div>
+
+    <div class="body-stack" id="bodyStack">
+      <article class="body-layer" data-reveal style="--accent:var(--ember);">
+        <div class="layer-head">
+          <span class="layer-index mono">01 · Physical body</span>
+          <span class="layer-kosha mono">Assemble · 12 noon</span>
+        </div>
+        <div class="layer-grid">
+          <div class="pole pole-outer">
+            <span class="pole-tag mono">Outside · the city</span>
+            <h3>The physical city</h3>
+            <p>Walk Varanasi as it actually is — stone, water, smoke, crowd. The ghats underfoot, the heat, the bells, the press of people. The city you can reach out and touch.</p>
+          </div>
+          <div class="interface-mark" aria-hidden="true">
+            <svg class="lemniscate" viewBox="0 0 100 50" role="presentation"><path pathLength="1" d="M50 25 C50 8 20 8 20 25 C20 42 50 42 50 25 C50 8 80 8 80 25 C80 42 50 42 50 25 Z"/></svg>
+            <span class="mono">interface</span>
+          </div>
+          <div class="pole pole-inner">
+            <span class="pole-tag mono">Inside · the body</span>
+            <h3>The physical body</h3>
+            <p>Then walk the body the same way — breath, weight, ache, appetite. The instrument you've lived inside for decades, mostly without ever stopping to look at it.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="body-layer" data-reveal style="--accent:var(--river);">
+        <div class="layer-head">
+          <span class="layer-index mono">02 · Astral body</span>
+          <span class="layer-kosha mono">Assemble · 3 afternoon</span>
+        </div>
+        <div class="layer-grid">
+          <div class="pole pole-outer">
+            <span class="pole-tag mono">Outside · the city</span>
+            <h3>Inner streets &amp; intersections</h3>
+            <p>Leave the main ghats for the galis — the tangle of lanes where the city really lives, and where every crossing is a small, quiet decision about which way to turn.</p>
+          </div>
+          <div class="interface-mark" aria-hidden="true">
+            <svg class="lemniscate" viewBox="0 0 100 50" role="presentation"><path pathLength="1" d="M50 25 C50 8 20 8 20 25 C20 42 50 42 50 25 C50 8 80 8 80 25 C80 42 50 42 50 25 Z"/></svg>
+            <span class="mono">interface</span>
+          </div>
+          <div class="pole pole-inner">
+            <span class="pole-tag mono">Inside · the body</span>
+            <h3>The internal structure</h3>
+            <p>Then trace your own intersections — the habits, the loops, the wiring beneath the surface, the places where your attention keeps turning down the same street.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="body-layer" data-reveal style="--accent:var(--brass);">
+        <div class="layer-head">
+          <span class="layer-index mono">03 · Causal body</span>
+          <span class="layer-kosha mono">Assemble · 6 evening</span>
+        </div>
+        <div class="layer-grid">
+          <div class="pole pole-outer">
+            <span class="pole-tag mono">Outside · the city</span>
+            <h3>The open spaces</h3>
+            <p>A few chosen points where the city suddenly opens — a rooftop, a wide quiet ghat at dusk, the river going vast. Room to see the whole thing from above.</p>
+          </div>
+          <div class="interface-mark" aria-hidden="true">
+            <svg class="lemniscate" viewBox="0 0 100 50" role="presentation"><path pathLength="1" d="M50 25 C50 8 20 8 20 25 C20 42 50 42 50 25 C50 8 80 8 80 25 C80 42 50 42 50 25 Z"/></svg>
+            <span class="mono">interface</span>
+          </div>
+          <div class="pole pole-inner">
+            <span class="pole-tag mono">Inside · the self</span>
+            <h3>The Self — the inner landscape</h3>
+            <p>And underneath it all, the ground the habits grow from — the open, wordless space the whole nine days has quietly been walking toward. The Self.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="bodies-close" data-reveal>
+      <svg class="lemniscate" viewBox="0 0 100 50" style="--accent:var(--brass);width:44px;height:22px;flex-shrink:0;" aria-hidden="true"><path pathLength="1" d="M50 25 C50 8 20 8 20 25 C20 42 50 42 50 25 C50 8 80 8 80 25 C80 42 50 42 50 25 Z"/></svg>
+      <span>Three layers up, and the outside and the inside are the same country.</span>
+    </div>
   </div>
 </section>
 
@@ -492,108 +610,6 @@ footer .brand{color:var(--bone-soft);font-size:1.1rem;}
   </div>
 </section>
 
-<section class="bodies" id="bodies" data-nav="dark">
-  <div class="container">
-    <span class="mono eyebrow" data-reveal>The method</span>
-    <h2 class="section-title" data-reveal>Three bodies. The city outside, the self inside — walked together.</h2>
-    <p class="lede" data-reveal>Every exploration on this journey has two faces. You walk the city, and you walk yourself — the same territory, seen from opposite sides. They meet at a single point the old texts called the <em>interface</em>. In Varanasi, this deepens across three days: you gather three times daily — noon, afternoon and evening — and each gathering climbs one layer higher, from the body you can touch to the self underneath everything.</p>
-
-    <div class="checkpoints" data-reveal aria-label="Daily assembly checkpoints in Varanasi">
-      <div class="checkpoint" style="--ck:var(--ember);">
-        <div class="ck-time">12 <span>Noon</span></div>
-        <span class="ck-body">Physical body</span>
-        <span class="ck-note">The ground floor</span>
-      </div>
-      <div class="checkpoint" style="--ck:var(--river);">
-        <div class="ck-time">3 <span>Afternoon</span></div>
-        <span class="ck-body">Astral body</span>
-        <span class="ck-note">The currents</span>
-      </div>
-      <div class="checkpoint" style="--ck:var(--brass);">
-        <div class="ck-time">6 <span>Evening</span></div>
-        <span class="ck-body">Causal body</span>
-        <span class="ck-note">The source</span>
-      </div>
-    </div>
-
-    <div class="body-stack" id="bodyStack">
-      <article class="body-layer" data-reveal style="--accent:var(--ember);">
-        <div class="layer-head">
-          <span class="layer-index mono">01 · Physical body</span>
-          <span class="layer-kosha mono">Assemble · 12 noon</span>
-        </div>
-        <div class="layer-grid">
-          <div class="pole pole-outer">
-            <span class="pole-tag mono">Outside · the city</span>
-            <h3>The physical city</h3>
-            <p>Walk Varanasi as it actually is — stone, water, smoke, crowd. The ghats underfoot, the heat, the bells, the press of people. The city you can reach out and touch.</p>
-          </div>
-          <div class="interface-mark" aria-hidden="true">
-            <svg class="lemniscate" viewBox="0 0 100 50" role="presentation"><path pathLength="1" d="M50 25 C50 8 20 8 20 25 C20 42 50 42 50 25 C50 8 80 8 80 25 C80 42 50 42 50 25 Z"/></svg>
-            <span class="mono">interface</span>
-          </div>
-          <div class="pole pole-inner">
-            <span class="pole-tag mono">Inside · the body</span>
-            <h3>The physical body</h3>
-            <p>Then walk the body the same way — breath, weight, ache, appetite. The instrument you've lived inside for decades, mostly without ever stopping to look at it.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="body-layer" data-reveal style="--accent:var(--river);">
-        <div class="layer-head">
-          <span class="layer-index mono">02 · Astral body</span>
-          <span class="layer-kosha mono">Assemble · 3 afternoon</span>
-        </div>
-        <div class="layer-grid">
-          <div class="pole pole-outer">
-            <span class="pole-tag mono">Outside · the city</span>
-            <h3>Inner streets &amp; intersections</h3>
-            <p>Leave the main ghats for the galis — the tangle of lanes where the city really lives, and where every crossing is a small, quiet decision about which way to turn.</p>
-          </div>
-          <div class="interface-mark" aria-hidden="true">
-            <svg class="lemniscate" viewBox="0 0 100 50" role="presentation"><path pathLength="1" d="M50 25 C50 8 20 8 20 25 C20 42 50 42 50 25 C50 8 80 8 80 25 C80 42 50 42 50 25 Z"/></svg>
-            <span class="mono">interface</span>
-          </div>
-          <div class="pole pole-inner">
-            <span class="pole-tag mono">Inside · the body</span>
-            <h3>The internal structure</h3>
-            <p>Then trace your own intersections — the habits, the loops, the wiring beneath the surface, the places where your attention keeps turning down the same street.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="body-layer" data-reveal style="--accent:var(--brass);">
-        <div class="layer-head">
-          <span class="layer-index mono">03 · Causal body</span>
-          <span class="layer-kosha mono">Assemble · 6 evening</span>
-        </div>
-        <div class="layer-grid">
-          <div class="pole pole-outer">
-            <span class="pole-tag mono">Outside · the city</span>
-            <h3>The open spaces</h3>
-            <p>A few chosen points where the city suddenly opens — a rooftop, a wide quiet ghat at dusk, the river going vast. Room to see the whole thing from above.</p>
-          </div>
-          <div class="interface-mark" aria-hidden="true">
-            <svg class="lemniscate" viewBox="0 0 100 50" role="presentation"><path pathLength="1" d="M50 25 C50 8 20 8 20 25 C20 42 50 42 50 25 C50 8 80 8 80 25 C80 42 50 42 50 25 Z"/></svg>
-            <span class="mono">interface</span>
-          </div>
-          <div class="pole pole-inner">
-            <span class="pole-tag mono">Inside · the self</span>
-            <h3>The Self — the inner landscape</h3>
-            <p>And underneath it all, the ground the habits grow from — the open, wordless space the whole nine days has quietly been walking toward. The Self.</p>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <div class="bodies-close" data-reveal>
-      <svg class="lemniscate" viewBox="0 0 100 50" style="--accent:var(--brass);width:44px;height:22px;flex-shrink:0;" aria-hidden="true"><path pathLength="1" d="M50 25 C50 8 20 8 20 25 C20 42 50 42 50 25 C50 8 80 8 80 25 C80 42 50 42 50 25 Z"/></svg>
-      <span>Three layers up, and the outside and the inside are the same country.</span>
-    </div>
-  </div>
-</section>
-
 <section class="nights" id="nights" data-nav="dark">
   <div class="container">
     <span class="mono eyebrow" data-reveal>Every night</span>
@@ -624,22 +640,6 @@ footer .brand{color:var(--bone-soft);font-size:1.1rem;}
     </div>
 
     <div class="note" data-reveal>These are guided conversations and mentorship — not clinical therapy. If you're already working with a licensed professional, this can sit alongside that support, not replace it.</div>
-  </div>
-</section>
-
-<section class="interface" id="interface" data-nav="dark" aria-label="The synthesis">
-  <div class="ph" style="--ph1:#3a2a20;--ph2:#0d0906;">
-    <img loading="lazy" data-parallax="0.12" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ganga%20aarti%20at%20Dasaswamedh%20Ghat,%20Varanasi%2001.jpg?width=2000" alt="Lamps and fire at the Ganga aarti, Varanasi, at night" onerror="this.closest('.ph').classList.add('is-broken')">
-    <span class="ph-label" aria-hidden="true">Varanasi · aarti</span>
-  </div>
-  <div class="container interface-inner">
-    <span class="mono eyebrow" data-reveal>The synthesis</span>
-    <div data-reveal style="--d:.06s">
-      <svg class="lemniscate-big" viewBox="0 0 100 50" role="presentation" aria-hidden="true"><path pathLength="1" d="M50 25 C50 6 16 6 16 25 C16 44 50 44 50 25 C50 6 84 6 84 25 C84 44 50 44 50 25 Z"/></svg>
-    </div>
-    <h2 data-reveal style="--d:.1s">Witnessing the interface.</h2>
-    <p data-reveal style="--d:.16s">Nine nights, three bodies, one city walked inside and out. What you leave with isn't an answer — it's the quiet ability to watch mind, soul and body move together, and to know, in any moment, which one is doing the talking.</p>
-    <div class="triad mono" data-reveal style="--d:.22s"><b>Mind</b><span>·</span><b>Soul</b><span>·</span><b>Body</b></div>
   </div>
 </section>
 
